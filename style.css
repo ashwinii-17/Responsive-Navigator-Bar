@@ -1,0 +1,84 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+
+  /* 🔽 Slide down animation */
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 1s ease forwards;
+}
+
+.section:nth-child(1) { animation-delay: 0.3s; }
+.section:nth-child(2) { animation-delay: 0.6s; }
+.section:nth-child(3) { animation-delay: 0.9s; }
+.section:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(45deg, #7f00ff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(45deg, #7f00ff, #00d2ff);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #7f00ff;
+}
+
+/* Glass effect cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  color: white !important;   /* ✅ Force white text */
+}
+.glass-card h3,
+.glass-card p {
+  color: white !important;   /* ✅ Headings & paragraphs white */
+}
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Navbar hover effect */
+.nav-link {
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #00d2ff !important;
+}
+
